@@ -47,6 +47,7 @@ namespace CityGuide.API
             // __ BU SATIRI BEN EKLEDİM
             services.AddCors();
             services.AddScoped<IAppRepository, AppRepository>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options=>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
