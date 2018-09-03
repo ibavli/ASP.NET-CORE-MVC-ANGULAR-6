@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using CityGuide.API.Data;
+using CityGuide.API.Helpers;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,6 +31,8 @@ namespace CityGuide.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // ___ BU SATIRI BEN EKLEDİM
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
             // ___ BU SATIRI BEN EKLEDİM
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection("Appsettings:Token").Value);
             // ___ BU SATIRI BEN EKLEDİM
